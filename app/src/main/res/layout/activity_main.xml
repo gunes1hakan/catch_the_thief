@@ -10,16 +10,17 @@
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="400dp"
         android:layout_height="400dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/textViewScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textViewTime">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="0"
             app:layout_row="0"
             app:srcCompat="@drawable/hirsiz" />
@@ -29,6 +30,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="1"
             app:layout_row="0"
             app:srcCompat="@drawable/hirsiz" />
@@ -38,6 +40,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="2"
             app:layout_row="0"
             app:srcCompat="@drawable/hirsiz" />
@@ -47,6 +50,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="3"
             app:layout_row="0"
             app:srcCompat="@drawable/hirsiz" />
@@ -56,6 +60,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="0"
             app:layout_row="1"
             app:srcCompat="@drawable/hirsiz" />
@@ -65,6 +70,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="1"
             app:layout_row="1"
             app:srcCompat="@drawable/hirsiz" />
@@ -74,6 +80,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="2"
             app:layout_row="1"
             app:srcCompat="@drawable/hirsiz" />
@@ -83,6 +90,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="3"
             app:layout_row="1"
             app:srcCompat="@drawable/hirsiz" />
@@ -92,6 +100,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="0"
             app:layout_row="2"
             app:srcCompat="@drawable/hirsiz" />
@@ -101,6 +110,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="1"
             app:layout_row="2"
             app:srcCompat="@drawable/hirsiz" />
@@ -110,6 +120,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="2"
             app:layout_row="2"
             app:srcCompat="@drawable/hirsiz" />
@@ -119,6 +130,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="3"
             app:layout_row="2"
             app:srcCompat="@drawable/hirsiz" />
@@ -128,6 +140,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="0"
             app:layout_row="3"
             app:srcCompat="@drawable/hirsiz" />
@@ -137,6 +150,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="1"
             app:layout_row="3"
             app:srcCompat="@drawable/hirsiz" />
@@ -146,6 +160,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="2"
             app:layout_row="3"
             app:srcCompat="@drawable/hirsiz" />
@@ -155,6 +170,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#FFA500"
+            android:onClick="increaseScore"
             app:layout_column="3"
             app:layout_row="3"
             app:srcCompat="@drawable/hirsiz" />
@@ -162,7 +178,7 @@
     </androidx.gridlayout.widget.GridLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -173,7 +189,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
