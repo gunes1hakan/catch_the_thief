@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,10 +14,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     TextView textViewTime;
     TextView textViewScore;
     ImageView[] imageViews;
+    Runnable runnable;
+
+    Handler handler;
     int score;
 
     @Override
@@ -63,10 +69,22 @@ public class MainActivity extends AppCompatActivity {
         textViewScore.setText("Score: "+score);
     }
 
-    public void hideImages(){       //Set the visibility of the ImageViews to invisible
-        for(ImageView i:imageViews){
-            i.setVisibility(View.INVISIBLE);
-        }
+    public void hideImages(){       //Created a motion effect by successively activating the thief image in changing grid positions.
+        handler=new Handler();
+        runnable=new Runnable() {
+            @Override
+            public void run() {
+                for(ImageView i:imageViews){
+                    i.setVisibility(View.INVISIBLE);
+                }
+                Random random = new Random();
+                int randomNumber = random.nextInt(16);
+                imageViews[randomNumber].setVisibility(View.VISIBLE);
+                handler.postDelayed(runnable,500);
+            }
+        };
+        handler.post(runnable);
+
     }
 
 }
