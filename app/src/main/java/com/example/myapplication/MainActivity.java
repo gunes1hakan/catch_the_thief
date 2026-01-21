@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,6 +22,18 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         score=0;
+        new CountDownTimer(10000,1000){     //Implemented the countdown timer logic
+
+            @Override
+            public void onFinish() {
+
+            }
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                textViewTime.setText("Time: "+millisUntilFinished/1000);
+            }
+        };
         textViewTime=findViewById(R.id.textViewTime);
         textViewScore=findViewById(R.id.textViewScore);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -34,4 +47,5 @@ public class MainActivity extends AppCompatActivity {
         score++;
         textViewScore.setText("Score: "+score);
     }
+
 }
