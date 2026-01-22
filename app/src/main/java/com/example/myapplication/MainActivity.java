@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -17,6 +19,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-
+                gameOver();
             }
 
             @Override
@@ -90,5 +93,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void gameOver(){     //The method executed at game over
+        saveTop3(score);
+    }
+
+    public void saveTop3(int newScore){     //Saves the top 3 high scores
+        SharedPreferences sharedPreferences=getSharedPreferences("com.example.myapplication", Context.MODE_PRIVATE);
+        int[] a={
+                sharedPreferences.getInt("best1",0),
+                sharedPreferences.getInt("best2",0),
+                sharedPreferences.getInt("best3",0),
+                newScore
+        };
+        Arrays.sort(a);
+        sharedPreferences.edit().
+                          putInt("best1",a[3]).
+                          putInt("best2",a[2]).
+                          putInt("best3",a[1]).
+                          apply();
+    }
 
 }
