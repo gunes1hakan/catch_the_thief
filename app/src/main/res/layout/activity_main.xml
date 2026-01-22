@@ -224,7 +224,7 @@
                 android:layout_gravity="center"/>
 
             <TextView
-                android:id="@+id/tvBest1"
+                android:id="@+id/best1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1) 0"
@@ -232,7 +232,7 @@
                 android:layout_marginTop="10dp"/>
 
             <TextView
-                android:id="@+id/tvBest2"
+                android:id="@+id/best2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2) 0"
@@ -240,19 +240,29 @@
                 android:layout_marginTop="6dp"/>
 
             <TextView
-                android:id="@+id/tvBest3"
+                android:id="@+id/best3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3) 0"
                 android:textSize="16sp"
                 android:layout_marginTop="6dp"/>
 
+            <TextView
+                android:id="@+id/yourScore"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0000FF"
+                android:text="Your Score: 0"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"/>
+
             <Button
                 android:id="@+id/btnPlayAgain"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Restart Game"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp"
+                android:text="Restart Game" />
 
         </LinearLayout>
 

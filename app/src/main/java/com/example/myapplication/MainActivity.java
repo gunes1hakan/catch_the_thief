@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                handler.removeCallbacks(runnable);
+                for(ImageView i:imageViews){
+                    i.setVisibility(View.INVISIBLE);
+                }
                 gameOver();
             }
 
@@ -95,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void gameOver(){     //The method executed at game over
         saveTop3(score);
+        showTop3OnOverlay(score);
     }
 
     public void saveTop3(int newScore){     //Saves the top 3 high scores
@@ -111,6 +116,17 @@ public class MainActivity extends AppCompatActivity {
                           putInt("best2",a[2]).
                           putInt("best3",a[1]).
                           apply();
+    }
+
+    public void showTop3OnOverlay(int newScore){        //Enabled the display of the top 3 high scores on the screen
+        SharedPreferences sp=getSharedPreferences("com.example.myapplication",Context.MODE_PRIVATE);
+
+        ((TextView) findViewById(R.id.best1)).setText("1) "+sp.getInt("best1",0));
+        ((TextView) findViewById(R.id.best2)).setText("2) "+sp.getInt("best2",0));
+        ((TextView) findViewById(R.id.best3)).setText("3) "+sp.getInt("best3",0));
+        ((TextView) findViewById(R.id.yourScore)).setText("Your Score: "+newScore);
+
+        findViewById(R.id.gameOverOverlay).setVisibility(View.VISIBLE);
     }
 
 }
