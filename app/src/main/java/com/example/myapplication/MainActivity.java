@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -127,6 +128,13 @@ public class MainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.yourScore)).setText("Your Score: "+newScore);
 
         findViewById(R.id.gameOverOverlay).setVisibility(View.VISIBLE);
+    }
+
+    public void restartGame(View view){     //Defined the onClick event handler for the restart button to reset game state
+        findViewById(R.id.gameOverOverlay).setVisibility(View.GONE);
+        Intent intent=getIntent();
+        finish();
+        startActivity(intent);
     }
 
 }
